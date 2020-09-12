@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  # REST API
+  api:
+    container_name: api
+    build: .
+    ports:
+      - "3000:3000"
+    links:
+      - database
+    environment:
+      - MONGO_DATABASE=videosdb
+      - MONGO_USER=admin
+      - MONGO_PASSWORD=admin
+      - MONGO_HOST=database
+    depends_on: 
+      - database
+    volumes: 
+      - .:/app
+
+  # Mongodb database
+  database:
+    container_name: videosdb
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin
+    logging:
+      driver: none
