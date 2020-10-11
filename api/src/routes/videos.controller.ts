@@ -40,6 +40,9 @@ export const updateVideo: RequestHandler = async (
   req,
   res
 ): Promise<Response> => {
-  const videoUpdated = await Video.findByIdAndUpdate(req.params.id, req.body);
+  const videoUpdated = await Video.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+  });
+  if (!videoUpdated) return res.status(204).json();
   return res.json(videoUpdated);
 };

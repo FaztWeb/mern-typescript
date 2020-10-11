@@ -10,14 +10,13 @@ Content-Type: application/json
 }
 
 ### GET VIDEO
-
-GET http://localhost:3000/videos/5f5c8044bf49b1003dcdaea5
+GET http://localhost:3000/videos/5f810077ea69c100198323c0
 
 ### DELETE VIDEO
-DELETE http://localhost:3000/videos/5f5c8044bf49b1003dcdaea5
+DELETE http://localhost:3000/videos/5f810077ea69c100198323c0
 
 ### UPDATE
-PUT http://localhost:3000/videos/5f5c7f300cad9e00325a30de
+PUT http://localhost:3000/videos/5f8100a4ea69c100198323c1
 Content-Type: application/json
 
 {
