@@ -4,7 +4,7 @@ import * as serviceWorker from "./serviceWorker";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import "bootswatch/dist/pulse/bootstrap.min.css";
+import "bootswatch/dist/darkly/bootstrap.min.css";
 import "react-toastify/dist/ReactToastify.css";
 import 'animate.css/animate.min.css';
 import "./index.css";
