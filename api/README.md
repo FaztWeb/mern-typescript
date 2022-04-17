@@ -1,12 +1,5 @@
 # Favorites Videos URL API
 
-# Platforms to Deploy
-
-- Heroku
-- Vercel
-- DigitalOcean
-- AWS
-
 # Environment variables
 - PORT
 - MONGO_DATABASE=videosdb

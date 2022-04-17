@@ -1,16 +1,24 @@
 import { Router } from "express";
 const router = Router();
 
-import * as videosCtrl from "./videos.controller";
+import {
+  createVideo,
+  deleteVideo,
+  getVideo,
+  getVideos,
+  updateVideo,
+} from "../controllers/videos.controller";
+import { validateSchema } from "../middlewares/validateSchema.middleware";
+import { CreateVideoSchema } from "../schema/video.schema";
 
-router.get("/videos", videosCtrl.getVideos);
+router.get("/videos", getVideos);
 
-router.get("/videos/:id", videosCtrl.getVideo);
+router.get("/videos/:id", getVideo);
 
-router.post("/videos", videosCtrl.createVideo);
+router.post("/videos", validateSchema(CreateVideoSchema), createVideo);
 
-router.delete("/videos/:id", videosCtrl.deleteVideo);
+router.delete("/videos/:id", deleteVideo);
 
-router.put("/videos/:id", videosCtrl.updateVideo);
+router.put("/videos/:id", updateVideo);
 
 export default router;

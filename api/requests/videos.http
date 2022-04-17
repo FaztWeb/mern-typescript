@@ -1,3 +1,4 @@
+### GET all videos
 GET http://localhost:3000/videos
 
 ### create video
